@@ -1,8 +1,10 @@
 package com.review_app.epr.controller; // Adjust package if you use a specific .controller sub-package
 
 import com.review_app.epr.entity.Employee;
+import com.review_app.epr.repository.EmployeeRepository;
 import com.review_app.epr.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
@@ -13,10 +15,13 @@ import java.util.List;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    private final EmployeeRepository employeeRepository;
 
     @Autowired
-    public EmployeeController(EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService, EmployeeRepository employeeRepository) {
+
         this.employeeService = employeeService;
+        this.employeeRepository=employeeRepository;
     }
 
     // 1. Add new users (GET all employees)
@@ -40,15 +45,14 @@ public class EmployeeController {
                     // Update fields that can change
                     employee.setName(employeeDetails.getName());
                     employee.setEmail(employeeDetails.getEmail());
-                   //we are allowing role change also...
-                     employee.setRole(employeeDetails.getRole());
+                    //we are allowing role change also...
+                    employee.setRole(employeeDetails.getRole());
 
                     Employee updatedEmployee = employeeRepository.save(employee);
                     return ResponseEntity.ok(updatedEmployee);
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-
     // --- Delete Employee (Delete User) ---
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEmployee(@PathVariable Long id) {

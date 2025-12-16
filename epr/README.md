@@ -1,4 +1,4 @@
-<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" /><img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/1ee55f8c-3a17-4031-a635-b8bf820a41b7" /># Employee-Performance-Review-App
+<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" /># Employee-Performance-Review-App
 Employee Performance Review App
 
 Functional Requirements:

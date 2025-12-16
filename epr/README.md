@@ -93,13 +93,14 @@ Admin can see all reviews and their status, but employee can see only the ones w
 
 ###How to run:: 
 
-Install PostGres DB with two type of tables (the tables will be automatically created when spring boot app starts from BE.
+Install PostGres DB (Reviews and Employees tables will be automatically created when spring boot app starts from BE).
 
-Make sure to have these Postgres properties
+Make sure to have these Postgres properties set
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/epr_db
-spring.datasource.username=postgres
-spring.datasource.password=abc123
+Postgres running on 5432
+Datavase name = epr_db
+Postgres username=postgres
+postgres password=abc123
 
 Backend: 
 Run /src/main/java/com/review_app/epr/EprApplication.java (it has main method so run this file). 

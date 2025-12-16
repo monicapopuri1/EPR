@@ -82,19 +82,24 @@ Similarly there are PUT commands to update Employee details
 For Review as well all the GET, POST, PUT commands are implemented.
 
 Usage:
-LOGIN first time with admin/admin (username/password). this is admin user.
+LOGIN first time with admin/admin (username). this is admin user.
 This user can create , edit and delete other employees and admins.
 An admin can add new reviews between two users and can manage other users. 
 An employee can view thier assigned reviews and then can update them and submit,
 Admin can see all reviews and their status, but employee can see only the ones which they reviewed. 
 
-To be implemented 
-- Current solution 
+###How to run:: 
+Backend: 
+first run BE - EprApplication.java (it has main method so run this file). 
+BE will run on localhost:8080
 
+UI:
+eprui has UI related code. It requires node.js to run. 
+in teh eprui folder, run "npm start" and UI will run on: 
+locahost:3000 
 
-eprui has UI related code. 
-There are mainly three files. 
-app.js - main UI file.
-app.cs - css file
-package.json - provides BE URL to UI.
+Somethings which are not implemented and can be done later:
+1. For now first user is admin which is hardcoded so that login can happen on first time. Later this can be implemented as signup.
+2. For now the basic validation on UI are done like email of user should have '@' character, but not other stuff like name should not be special character and so on.
+
         

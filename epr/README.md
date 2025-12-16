@@ -1,4 +1,7 @@
-<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" /># Employee-Performance-Review-App
+<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" />
+Above is just a simple flow between different users and services and DB. This is not illustration of exact classes, for that please check the code. 
+
+# Employee-Performance-Review-App
 Employee Performance Review App
 
 Functional Requirements:

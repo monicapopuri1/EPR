@@ -128,6 +128,8 @@ Some screen shots of running application:
 <img width="932" height="255" alt="image" src="https://github.com/user-attachments/assets/c7518cf7-10f0-4938-989a-66e9b183eac4" />
 <img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/2f39e4b4-7860-437e-bc58-958cd4cec0bb" />
 <img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/9bc933bf-db93-48ee-a0de-07aee167c2e9" />
+<img width="932" height="416" alt="image" src="https://github.com/user-attachments/assets/14f18142-3753-4f6b-a0c1-f4cc75b95850" />
+
 <img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/7ea2aff2-7db6-4553-9246-39910e1c7b58" />    
 
 <img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/e772dcfd-71ce-4f09-a84b-9abccef4c89d" />

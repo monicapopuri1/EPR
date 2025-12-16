@@ -49,11 +49,11 @@ public class Employee {
             this.name = name;
         }
 
-        public void setEmail() {
+        public void setEmail(String name) {
             this.email= email;
         }
 
-        public void setRole() {
+        public void setRole(String name) {
             this.role= role;
         }
     }

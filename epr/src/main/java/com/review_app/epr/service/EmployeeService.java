@@ -25,5 +25,17 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    // We will add logic to find by ID later
+   //when there is no employee, admin is default
+    public Employee loadUserByEmpname(String username) //
+    {
+        if ("admin".equalsIgnoreCase(username) && employeeRepository.count() == 0) {
+
+            List<SimpleGrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ADMIN"));
+
+            return new Employee(
+                    "admin",
+                    "admin@company.com","admin");
+        }
+        return null;
+    }
 }

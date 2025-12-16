@@ -121,5 +121,18 @@ Somethings which are not implemented and can be done later:
 3. For now there is no password provision in the app, we need to add it in future, the app logs in with name field.
 4. Primary key for employee table is Email id.
 
+Some screen shots of running application:
+<img width="685" height="376" alt="image" src="https://github.com/user-attachments/assets/679bd06b-ac65-416d-8744-88553bfd60c1" />
+<img width="685" height="376" alt="image" src="https://github.com/user-attachments/assets/09d7da97-7d72-4122-ab3d-b78db2b4c342" />
+<img width="832" height="519" alt="image" src="https://github.com/user-attachments/assets/ee419463-511a-4b05-ba53-4f7491fd2e41" />
+<img width="932" height="255" alt="image" src="https://github.com/user-attachments/assets/c7518cf7-10f0-4938-989a-66e9b183eac4" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/2f39e4b4-7860-437e-bc58-958cd4cec0bb" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/9bc933bf-db93-48ee-a0de-07aee167c2e9" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/7ea2aff2-7db6-4553-9246-39910e1c7b58" />    
+
+
+
+
+
 
         

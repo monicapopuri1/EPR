@@ -130,6 +130,9 @@ Some screen shots of running application:
 <img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/9bc933bf-db93-48ee-a0de-07aee167c2e9" />
 <img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/7ea2aff2-7db6-4553-9246-39910e1c7b58" />    
 
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/e772dcfd-71ce-4f09-a84b-9abccef4c89d" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/4b305d07-1c3f-468e-93a2-71bb64dc145a" />
+
 
 
 

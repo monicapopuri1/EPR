@@ -93,13 +93,19 @@ Backend:
 first run BE - EprApplication.java (it has main method so run this file). 
 BE will run on localhost:8080
 
+
 UI:
 eprui has UI related code. It requires node.js to run. 
 in teh eprui folder, run "npm start" and UI will run on: 
 locahost:3000 
+Enter name as "admin" for the first time. and then you can add more users (Employees) and can login with other user names. 
+
 
 Somethings which are not implemented and can be done later:
 1. For now first user is admin which is hardcoded so that login can happen on first time. Later this can be implemented as signup.
 2. For now the basic validation on UI are done like email of user should have '@' character, but not other stuff like name should not be special character and so on.
+3. For now there is no password provision in the app, we need to add it in future, the app logs in with name field.
+4. Primary key for employee table is Email id.
+
 
         

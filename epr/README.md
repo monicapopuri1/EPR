@@ -14,7 +14,7 @@ Employee view
 - Submit feedback
 
 NonFunctional Requirement:
-- High Available - 99.99%
+- High Available
 - latency - API response time <200ms 
 - Scalability - assume the organization has 1 lakh employees. And there are 10,000 concurrent employees at peak time of perf reviews
 - Durability - Once entered the reviews should not be lost and should be accurate and also a review should point to valid employee

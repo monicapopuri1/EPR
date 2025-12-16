@@ -92,17 +92,27 @@ An employee can view thier assigned reviews and then can update them and submit,
 Admin can see all reviews and their status, but employee can see only the ones which they reviewed. 
 
 ###How to run:: 
+
+Install PostGres DB with two type of tables (the tables will be automatically created when spring boot app starts from BE.
+
+Make sure to have these Postgres properties
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/epr_db
+spring.datasource.username=postgres
+spring.datasource.password=abc123
+
 Backend: 
-first run BE - EprApplication.java (it has main method so run this file). 
-BE will run on localhost:8080
+Run /src/main/java/com/review_app/epr/EprApplication.java (it has main method so run this file). 
+BE will run on localhost:8080 (make sure 8080 is not in use already)
 
 
 UI:
 eprui has UI related code. It requires node.js to run. 
-in teh eprui folder, run "npm start" and UI will run on: 
+Install Node.js and then in the eprui folder, run "npm start" and 
+UI will run on: 
 locahost:3000 
-Enter name as "admin" for the first time. and then you can add more users (Employees) and can login with other user names. 
 
+Enter name as "admin" for the first time. and then you can add more users (Employees) and can login with other user names. 
 
 Somethings which are not implemented and can be done later:
 1. For now first user is admin which is hardcoded so that login can happen on first time. Later this can be implemented as signup.

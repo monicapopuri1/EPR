@@ -133,7 +133,7 @@ Make sure to have these Postgres properties set
 
 Postgres running on port 5432 (configurable but for the current application)
 
-Datavase name = epr_db 
+Database name = epr_db 
 
 Postgres username=postgres
 

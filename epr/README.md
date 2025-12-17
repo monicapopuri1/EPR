@@ -1,5 +1,3 @@
-<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" />
-Above is just a simple flow between different users and services and DB. This is not illustration of exact classes, for that please check the code. 
 
 # Employee-Performance-Review-App
 Employee Performance Review App
@@ -31,6 +29,10 @@ a feedback on the review received.
 - If an admin added a review its called submited
 - when a employee submits a review its called submitted.
 
+Lets start with a simple flow of program , how different users will interact with it. (there is class level diagram later)
+<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" />
+
+. 
 
 Core Entities:
 

@@ -67,6 +67,7 @@ one user details - 5KB, user storage - 5,000 * 1,00,000 = 50,000,000 = 50MB
 review storage - one review = 1000 lines of text =  50KB , for all emp = 50KB * 1,00,000 = 5,000,000,000 = 5GB
 .
 High level diagram for Employee Flow (Similar with Review applies)
+
 ![Uploading image.png…]()
 
 The Code is as follows:

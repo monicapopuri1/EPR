@@ -15,7 +15,7 @@ public class Employee {
     @Column(unique = true) //Uniqueness on email id, Ensures no two employees can have the same email
     private String email;
 
-    private String role; // e.g., "Manager", "Developer"
+    private String role; // e.g., "Admin", "Employee"
 
     public Employee() {}
 

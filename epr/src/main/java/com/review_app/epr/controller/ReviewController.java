@@ -19,12 +19,12 @@ public class ReviewController {
 
     private static final Logger logger = LoggerFactory.getLogger(ReviewController.class);
     //private final ReviewService reviewService;
-    private final ReviewRepository reviewRepository; // <--- NEW Field
+    private final ReviewRepository reviewRepository; 
 
     // 1. Single Constructor to Inject BOTH Dependencies
     public ReviewController(ReviewService reviewService, ReviewRepository reviewRepository) {
         this.reviewService = reviewService;
-        this.reviewRepository = reviewRepository; // <--- NEW Injection
+        this.reviewRepository = reviewRepository; 
     }
 
     @GetMapping // <-- Mapping to the base path /api/v1/reviews
@@ -33,7 +33,7 @@ public class ReviewController {
     }
    //POST for adding reviews
     @PostMapping // Maps to POST /api/v1/reviews
-    @ResponseStatus(HttpStatus.CREATED) // Sets the HTTP status code to 201 Created
+    @ResponseStatus(HttpStatus.CREATED) 
     public Review createReview(@RequestBody Review review) {
         logger.info("Received POST request for review: {}");
         return reviewService.saveReview(review);
@@ -43,11 +43,11 @@ public class ReviewController {
         // 1. Find the existing review
 
         return reviewRepository.findById(id).map(review -> {
-                    // 2. Update the fields based on the payload from the React form
+                    // 2. Update the fields based on the input from user
                     logger.info("comment" + updatedReview.getContent());
-                    review.setContent(updatedReview.getContent()); // New comment
+                    review.setContent(updatedReview.getContent()); 
                     review.setRating(updatedReview.getRating());   // New rating
-                    review.setStatus("COMPLETED");                // Set status to COMPLETED
+                    review.setStatus("COMPLETED");                // mark status to COMPLETE D as the review is added.
 
                     // 3. Save and return
                     Review savedReview = reviewRepository.save(review);

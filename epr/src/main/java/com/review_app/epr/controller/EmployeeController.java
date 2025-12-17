@@ -1,4 +1,4 @@
-package com.review_app.epr.controller; // Adjust package if you use a specific .controller sub-package
+package com.review_app.epr.controller;
 
 import com.review_app.epr.entity.Employee;
 import com.review_app.epr.repository.EmployeeRepository;

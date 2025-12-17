@@ -30,14 +30,10 @@ public class Review {
         this.revieweeName = revieweeName;
         this.content = content;
         this.rating = rating;
-        this.status = "Pending";
+        this.status = "Pending"; // When review is created by admin, the status should be pending.
     }
 
     // --- GETTERS AND SETTERS ---
-    // You must generate these for all fields (id, reviewerName, revieweeName, content, rating)
-
-
-    // Example Getter/Setter for ID:
     public String getReviewerName() {
         return reviewerName;
     }
@@ -45,7 +41,7 @@ public class Review {
     public String getRevieweeName() {
         return revieweeName;
     }
-    // Example Getter/Setter for ID:
+
     public Long getId() {
         return id;
     }

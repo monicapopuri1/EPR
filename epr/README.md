@@ -68,7 +68,7 @@ review storage - one review = 1000 lines of text =  50KB , for all emp = 50KB * 
 .
 High level diagram for Employee Flow (Similar with Review applies)
 
-![Uploading image.png…]()
+<img width="712" height="312" alt="image" src="https://github.com/user-attachments/assets/def678c7-eba6-47cc-bea1-47e800bdeade" />
 
 The Code is as follows:
 "epr" Folder contains Backend code. First used needs to be "Admin ADMIN" and password "admin".
@@ -118,11 +118,6 @@ locahost:3000
 
 Enter name as "admin" for the first time. and then you can add more users (Employees) and can login with other user names. 
 
-Somethings which are not implemented and can be done later:
-1. For now first user is admin which is hardcoded so that login can happen on first time. Later this can be implemented as signup.
-2. For now the basic validation on UI are done like email of user should have '@' character, but not other stuff like name should not be special character and so on.
-3. For now there is no password provision in the app, we need to add it in future, the app logs in with name field.
-4. Primary key for employee table is Email id.
 
 Some screen shots of running application:
 <img width="685" height="376" alt="image" src="https://github.com/user-attachments/assets/679bd06b-ac65-416d-8744-88553bfd60c1" />
@@ -140,6 +135,12 @@ Some screen shots of running application:
 
 
 
+Somethings which are not implemented and can be done later:
+1. For now first user is admin which is hardcoded so that login can happen on first time. Later this can be implemented as signup.
+2. For now the basic validation on UI are done like email of user should have '@' character, but not other stuff like name should not be special character and so on.
+3. For now there is no password provision in the app, we need to add it in future, the app logs in with name field.
+4. Primary key for employee table is Email id.
+5. Its monolith and can be converted to microservices for employee and review services in future.
 
 
 

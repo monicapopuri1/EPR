@@ -79,7 +79,7 @@ function App() {
   const [editingEmployee, setEditingEmployee] = useState(null); 
   const [employeeForm, setEmployeeForm] = useState({ name: '', email: '' });
   
- //If admin then show all reviews else show only assigned pending reviews
+ //If admin then show all employee's reviews else show only reviewers all reviews
   const isAdmin = currentUser?.role === 'ADMIN'; 
   const currentUserName = currentUser?.name;
   

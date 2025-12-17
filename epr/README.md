@@ -34,6 +34,7 @@ Lets start with a simple flow of program , how different users will interact wit
  
 
 **Core Entities:**
+
 1. Users 
     emp_id
     name
@@ -49,11 +50,13 @@ Lets start with a simple flow of program , how different users will interact wit
     Status
 
 **Tech Stack-** 
+
 BE - java spring boot for BE
 UI - ReactJS
 Server - Node JS for UI
 
 **DB choice - **
+
 MongoDB and Postgres can be good candidate for this kind of data. 
 But we choose Postgres for following reasons:
 
@@ -71,8 +74,11 @@ First time login allows with username "admin" (no password).
 BE URL - GET localhost:8080/api/v1/employees, /api/v1/reviews,
 
 **APIs implemented are - **
+
 **Employees:** 
-**POST** localhost:8080/api/v1/employees
+
+**POST** 
+POST localhost:8080/api/v1/employees
 body: {
     "name":"Ramesh ADMIN",
     "email":"ramesh@company.com",
@@ -81,9 +87,11 @@ body: {
 response 201 created or 500 for duplicate or 403 etc
 
 **GET** 
+
 GET localhost:8080/api/v1/employees - Returns all employees list
 
 **PUT** 
+
 PUT http://localhost:3000/api/v1/employees/21 
 body :{
     "email":"ramesh@company.com",
@@ -91,6 +99,7 @@ body :{
 }
 
 **Reviews**
+
 Example - To get all reviews for reviewer with id =2 ::
 GET localhost:8080/api/v1/reviews?reviewerid=2
 
@@ -122,13 +131,18 @@ Install PostGres DB (Reviews and Employees tables will be automatically created 
 
 Make sure to have these Postgres properties set
 
-Postgres running on 5432
-Datavase name = epr_db
+Postgres running on port 5432 (configurable but for the current application)
+
+Datavase name = epr_db 
+
 Postgres username=postgres
+
 postgres password=abc123
 
-Backend: 
+**Backend: **
+
 Run /src/main/java/com/review_app/epr/EprApplication.java (it has main method so run this file). 
+
 BE will run on localhost:8080 (make sure 8080 is not in use already)
 
 

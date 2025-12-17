@@ -26,16 +26,14 @@ Assumption
 - The term feedback and reviews are interchangeably used here in requirements, and they do not mean 
 a feedback on the review received.
 - status of a review is either pending or completed, not going with read unread etc. 
-- If an admin added a review its called submited
-- when a employee submits a review its called submitted.
+
 
 Lets start with a simple flow of program , how different users will interact with it. (there is class level diagram later)
 <img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" />
 
-. 
+ 
 
-Core Entities:
-
+**Core Entities:**
 1. Users 
     emp_id
     name
@@ -50,12 +48,12 @@ Core Entities:
     Rating
     Status
 
-Tech Stack- 
+**Tech Stack-** 
 BE - java spring boot for BE
 UI - ReactJS
 Server - Node JS for UI
 
-DB choice - 
+**DB choice - **
 MongoDB and Postgres can be good candidate for this kind of data. 
 But we choose Postgres for following reasons:
 
@@ -63,31 +61,53 @@ But we choose Postgres for following reasons:
 2. Querying like joins to get reviews for one user or by one user etc will not be easy in MongoDB
 3. ACID properties are required like ensuring reviews are not lost and review points to valid employee is crutial which is possible with SQL like DB like PostGre
 
-Back of Env estimates:
-
-one user details - 5KB, user storage - 5,000 * 1,00,000 = 50,000,000 = 50MB
-review storage - one review = 1000 lines of text =  50KB , for all emp = 50KB * 1,00,000 = 5,000,000,000 = 5GB
-.
 High level diagram for Employee Flow (Similar with Review applies)
 
 <img width="712" height="312" alt="image" src="https://github.com/user-attachments/assets/def678c7-eba6-47cc-bea1-47e800bdeade" />
 
-The Code is as follows:
-"epr" Folder contains Backend code. First used needs to be "Admin ADMIN" and password "admin".
+Here is Directory structure in GIT: 
+"epr" Folder contains Backend code.
+First time login allows with username "admin" (no password).
 BE URL - GET localhost:8080/api/v1/employees, /api/v1/reviews,
-APIs implemented are - 
-POST localhost:8080/api/v1/employees
+
+**APIs implemented are - **
+**Employees:** 
+**POST** localhost:8080/api/v1/employees
 body: {
-    "name":"name4 ADMIN",
-    "email":"e43",
+    "name":"Ramesh ADMIN",
+    "email":"ramesh@company.com",
     "role":"ADMIN"
-    
 }
 response 201 created or 500 for duplicate or 403 etc
 
-Similarly there are PUT commands to update Employee details
+**GET** 
+GET localhost:8080/api/v1/employees - Returns all employees list
 
-For Review as well all the GET, POST, PUT commands are implemented.
+**PUT** 
+PUT http://localhost:3000/api/v1/employees/21 
+body :{
+    "email":"ramesh@company.com",
+    "role":"ADMIN"
+}
+
+**Reviews**
+Example - To get all reviews for reviewer with id =2 ::
+GET localhost:8080/api/v1/reviews?reviewerid=2
+
+Example - To post a new review 
+POST localhost:8080/api/v1/reviews/createreview
+body: {
+    reviewerid: id,
+    revieweeid: id,
+    }
+    
+Example- For a emp to add comment and rating
+PUT localhost:8080/api/v1/reviews/review_id
+{
+    comment:{string},
+    rating: {int}
+}
+
 
 Usage:
 LOGIN first time with admin/admin (username). this is admin user.

@@ -1,0 +1,183 @@
+
+# Employee-Performance-Review-App
+Employee Performance Review App
+
+Functional Requirements:
+- Design a web application that allows employees to submit feedback toward each
+other's performance review.
+Admin view
+- Add/remove/update/view employees
+- Add/update/view performance reviews
+- Assign employees to participate in another employee's performance review
+
+Employee view
+- List of performance reviews requiring feedback
+- Submit feedback
+
+NonFunctional Requirement:
+- High Available
+- latency - API response time <200ms 
+- Scalability - assume the organization has 1 lakh employees. And there are 10,000 concurrent employees at peak time of perf reviews
+- Durability - Once entered the reviews should not be lost and should be accurate and also a review should point to valid employee
+
+Assumption
+- user authorization and authorization is out of scope. For now the views are shown based on role and filter in UI.,
+- Employees can not update the review they have submitted
+- The term feedback and reviews are interchangeably used here in requirements, and they do not mean 
+a feedback on the review received.
+- status of a review is either pending or completed, not going with read unread etc. 
+
+
+Lets start with a simple flow of program , how different users will interact with it. (there is class level diagram later)
+<img width="792" height="299" alt="image" src="https://github.com/user-attachments/assets/adbe6ca1-990d-473c-b752-6c2225f536d4" />
+
+ 
+
+**Core Entities:**
+
+1. Users 
+    emp_id
+    name
+    email
+    org
+    ..
+   2. Reviews
+    Review_id
+    Reviewer
+    Reviewee
+    Comments
+    Rating
+    Status
+
+**Tech Stack-** 
+
+BE - java spring boot for BE
+UI - ReactJS
+Server - Node JS for UI
+
+**DB choice - **
+
+MongoDB and Postgres can be good candidate for this kind of data. 
+But we choose Postgres for following reasons:
+
+1. Mongo DB is mostly required when our data is too heavy , which is not a case here
+2. Querying like joins to get reviews for one user or by one user etc will not be easy in MongoDB
+3. ACID properties are required like ensuring reviews are not lost and review points to valid employee is crutial which is possible with SQL like DB like PostGre
+
+High level diagram for Employee Flow (Similar with Review applies)
+
+<img width="712" height="312" alt="image" src="https://github.com/user-attachments/assets/def678c7-eba6-47cc-bea1-47e800bdeade" />
+
+Here is Directory structure in GIT: 
+"epr" Folder contains Backend code.
+First time login allows with username "admin" (no password).
+BE URL - GET localhost:8080/api/v1/employees, /api/v1/reviews,
+
+**APIs implemented are - **
+
+**Employees:** 
+
+**POST** 
+POST localhost:8080/api/v1/employees
+body: {
+    "name":"Ramesh ADMIN",
+    "email":"ramesh@company.com",
+    "role":"ADMIN"
+}
+response 201 created or 500 for duplicate or 403 etc
+
+**GET** 
+
+GET localhost:8080/api/v1/employees - Returns all employees list
+
+**PUT** 
+
+PUT http://localhost:3000/api/v1/employees/21 
+body :{
+    "email":"ramesh@company.com",
+    "role":"ADMIN"
+}
+
+**Reviews**
+
+Example - To get all reviews for reviewer with id =2 ::
+GET localhost:8080/api/v1/reviews?reviewerid=2
+
+Example - To post a new review 
+POST localhost:8080/api/v1/reviews/createreview
+body: {
+    reviewerid: id,
+    revieweeid: id,
+    }
+    
+Example- For a emp to add comment and rating
+PUT localhost:8080/api/v1/reviews/review_id
+{
+    comment:{string},
+    rating: {int}
+}
+
+
+Usage:
+LOGIN first time with admin/admin (username). this is admin user.
+This user can create , edit and delete other employees and admins.
+An admin can add new reviews between two users and can manage other users. 
+An employee can view thier assigned reviews and then can update them and submit,
+Admin can see all reviews and their status, but employee can see only the ones which they reviewed. 
+
+###How to run:: 
+
+Install PostGres DB (Reviews and Employees tables will be automatically created when spring boot app starts from BE).
+
+Make sure to have these Postgres properties set
+
+Postgres running on port 5432 (configurable but for the current application)
+
+Database name = epr_db 
+
+Postgres username=postgres
+
+postgres password=abc123
+
+**Backend: **
+
+Run /src/main/java/com/review_app/epr/EprApplication.java (it has main method so run this file). 
+
+BE will run on localhost:8080 (make sure 8080 is not in use already)
+
+
+UI:
+eprui has UI related code. It requires node.js to run. 
+Install Node.js and then in the eprui folder, run "npm start" and 
+UI will run on: 
+locahost:3000 
+
+Enter name as "admin" for the first time. and then you can add more users (Employees) and can login with other user names. 
+
+
+Some screen shots of running application:
+<img width="685" height="376" alt="image" src="https://github.com/user-attachments/assets/679bd06b-ac65-416d-8744-88553bfd60c1" />
+<img width="685" height="376" alt="image" src="https://github.com/user-attachments/assets/09d7da97-7d72-4122-ab3d-b78db2b4c342" />
+<img width="832" height="519" alt="image" src="https://github.com/user-attachments/assets/ee419463-511a-4b05-ba53-4f7491fd2e41" />
+<img width="932" height="255" alt="image" src="https://github.com/user-attachments/assets/c7518cf7-10f0-4938-989a-66e9b183eac4" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/2f39e4b4-7860-437e-bc58-958cd4cec0bb" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/9bc933bf-db93-48ee-a0de-07aee167c2e9" />
+<img width="932" height="416" alt="image" src="https://github.com/user-attachments/assets/14f18142-3753-4f6b-a0c1-f4cc75b95850" />
+
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/7ea2aff2-7db6-4553-9246-39910e1c7b58" />    
+
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/e772dcfd-71ce-4f09-a84b-9abccef4c89d" />
+<img width="932" height="521" alt="image" src="https://github.com/user-attachments/assets/4b305d07-1c3f-468e-93a2-71bb64dc145a" />
+
+
+
+Somethings which are not implemented and can be done later:
+1. For now first user is admin which is hardcoded so that login can happen on first time. Later this can be implemented as signup.
+2. For now the basic validation on UI are done like email of user should have '@' character, but not other stuff like name should not be special character and so on.
+3. For now there is no password provision in the app, we need to add it in future, the app logs in with name field.
+4. Primary key for employee table is Email id.
+5. Its monolith and can be converted to microservices for employee and review services in future.
+
+
+
+        
